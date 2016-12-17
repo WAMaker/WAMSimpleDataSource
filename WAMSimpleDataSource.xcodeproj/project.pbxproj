@@ -348,7 +348,7 @@
 		CA8A63CA1E04C195007E99FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YRG4DJBZG5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -367,7 +367,7 @@
 		CA8A63CB1E04C195007E99FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YRG4DJBZG5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
