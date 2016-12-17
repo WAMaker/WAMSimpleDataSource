@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "WAMCellInfo.h"
 #import "WAMTestsConstant.h"
+#import "WAMCellInfo+Private.h"
 
 @interface WAMCellInfoTests : XCTestCase
 
@@ -26,13 +27,15 @@
     [super tearDown];
 }
 
-- (void)testCellInitialization {
+- (void)testCellInfoInitialization {
     WAMCellInfo *cellInfo = [WAMCellInfo infoWithReuseIdentifier:kCellReuseIdentifier title:kCellTitle detail:nil alias:kCellAlias];
     
     XCTAssertNotNil(cellInfo);
+    
     XCTAssertEqual(cellInfo.reuseIdentifier, kCellReuseIdentifier);
     XCTAssertEqual(cellInfo.title, kCellTitle);
     XCTAssertEqual(cellInfo.alias, kCellAlias);
+    
     XCTAssertNil(cellInfo.detail);
     XCTAssertNil(cellInfo.cell);
     
@@ -40,19 +43,30 @@
     XCTAssertEqual(cellInfo.detail, kCellDetail);
 }
 
-- (void)testSelfDefineCellInitialization {
+- (void)testSelfDefineCellInfoInitialization {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellReuseIdentifier];
-    WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:cell alias:nil];
+    WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:cell alias:kCellAlias];
     
     XCTAssertNotNil(cellInfo);
+    
     XCTAssertEqual(cellInfo.cell, cell);
+    
     XCTAssertNil(cellInfo.reuseIdentifier);
     XCTAssertNil(cellInfo.title);
     XCTAssertNil(cellInfo.detail);
-    XCTAssertNil(cellInfo.alias);
     
-    cellInfo.alias = kCellAlias;
     XCTAssertEqual(cellInfo.alias, kCellAlias);
+}
+
+- (void)testValid {
+    WAMCellInfo *cellInfo = [WAMCellInfo infoWithReuseIdentifier:kCellReuseIdentifier title:kCellTitle detail:nil alias:kCellAlias];
+    XCTAssertTrue(cellInfo.valid);
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellReuseIdentifier];
+    cellInfo = [WAMCellInfo infoWithSelfDefineCell:cell alias:nil];
+    XCTAssertTrue(cellInfo.valid);
+    
+    XCTAssertFalse([WAMCellInfo new].valid);
 }
 
 @end

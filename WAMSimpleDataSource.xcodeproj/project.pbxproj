@@ -10,8 +10,12 @@
 		CA6AE4141E04C3C100439971 /* WAMCellInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6AE4121E04C3C100439971 /* WAMCellInfo.h */; };
 		CA6AE4151E04C3C100439971 /* WAMCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4131E04C3C100439971 /* WAMCellInfo.m */; };
 		CA6AE4171E04CD1A00439971 /* WAMCellInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4161E04CD1A00439971 /* WAMCellInfoTests.m */; };
+		CA6AE41B1E04D14100439971 /* WAMSectionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6AE4191E04D14100439971 /* WAMSectionInfo.h */; };
+		CA6AE41C1E04D14100439971 /* WAMSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE41A1E04D14100439971 /* WAMSectionInfo.m */; };
+		CA6AE4211E04D87B00439971 /* WAMCellInfo+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6AE41F1E04D87B00439971 /* WAMCellInfo+Private.h */; };
+		CA6AE4221E04D87B00439971 /* WAMCellInfo+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4201E04D87B00439971 /* WAMCellInfo+Private.m */; };
+		CA6AE4241E04E9DB00439971 /* WAMSectionInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4231E04E9DB00439971 /* WAMSectionInfoTests.m */; };
 		CA8A63BF1E04C195007E99FA /* WAMSimpleDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A63B51E04C195007E99FA /* WAMSimpleDataSource.framework */; };
-		CA8A63C41E04C195007E99FA /* WAMSimpleDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A63C31E04C195007E99FA /* WAMSimpleDataSourceTests.m */; };
 		CA8A63C61E04C195007E99FA /* WAMSimpleDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -30,11 +34,15 @@
 		CA6AE4131E04C3C100439971 /* WAMCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMCellInfo.m; sourceTree = "<group>"; };
 		CA6AE4161E04CD1A00439971 /* WAMCellInfoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMCellInfoTests.m; sourceTree = "<group>"; };
 		CA6AE4181E04CDBC00439971 /* WAMTestsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAMTestsConstant.h; sourceTree = "<group>"; };
+		CA6AE4191E04D14100439971 /* WAMSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAMSectionInfo.h; sourceTree = "<group>"; };
+		CA6AE41A1E04D14100439971 /* WAMSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMSectionInfo.m; sourceTree = "<group>"; };
+		CA6AE41F1E04D87B00439971 /* WAMCellInfo+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WAMCellInfo+Private.h"; sourceTree = "<group>"; };
+		CA6AE4201E04D87B00439971 /* WAMCellInfo+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WAMCellInfo+Private.m"; sourceTree = "<group>"; };
+		CA6AE4231E04E9DB00439971 /* WAMSectionInfoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMSectionInfoTests.m; sourceTree = "<group>"; };
 		CA8A63B51E04C195007E99FA /* WAMSimpleDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WAMSimpleDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAMSimpleDataSource.h; sourceTree = "<group>"; };
 		CA8A63B91E04C195007E99FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8A63BE1E04C195007E99FA /* WAMSimpleDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WAMSimpleDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA8A63C31E04C195007E99FA /* WAMSimpleDataSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WAMSimpleDataSourceTests.m; sourceTree = "<group>"; };
 		CA8A63C51E04C195007E99FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +88,12 @@
 			children = (
 				CA8A63B91E04C195007E99FA /* Info.plist */,
 				CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */,
+				CA6AE4191E04D14100439971 /* WAMSectionInfo.h */,
+				CA6AE41A1E04D14100439971 /* WAMSectionInfo.m */,
 				CA6AE4121E04C3C100439971 /* WAMCellInfo.h */,
 				CA6AE4131E04C3C100439971 /* WAMCellInfo.m */,
+				CA6AE41F1E04D87B00439971 /* WAMCellInfo+Private.h */,
+				CA6AE4201E04D87B00439971 /* WAMCellInfo+Private.m */,
 			);
 			path = WAMSimpleDataSource;
 			sourceTree = "<group>";
@@ -90,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				CA8A63C51E04C195007E99FA /* Info.plist */,
-				CA8A63C31E04C195007E99FA /* WAMSimpleDataSourceTests.m */,
 				CA6AE4181E04CDBC00439971 /* WAMTestsConstant.h */,
+				CA6AE4231E04E9DB00439971 /* WAMSectionInfoTests.m */,
 				CA6AE4161E04CD1A00439971 /* WAMCellInfoTests.m */,
 			);
 			path = WAMSimpleDataSourceTests;
@@ -105,6 +117,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6AE4141E04C3C100439971 /* WAMCellInfo.h in Headers */,
+				CA6AE41B1E04D14100439971 /* WAMSectionInfo.h in Headers */,
+				CA6AE4211E04D87B00439971 /* WAMCellInfo+Private.h in Headers */,
 				CA8A63C61E04C195007E99FA /* WAMSimpleDataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6AE4151E04C3C100439971 /* WAMCellInfo.m in Sources */,
+				CA6AE41C1E04D14100439971 /* WAMSectionInfo.m in Sources */,
+				CA6AE4221E04D87B00439971 /* WAMCellInfo+Private.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8A63C41E04C195007E99FA /* WAMSimpleDataSourceTests.m in Sources */,
 				CA6AE4171E04CD1A00439971 /* WAMCellInfoTests.m in Sources */,
+				CA6AE4241E04E9DB00439971 /* WAMSectionInfoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
