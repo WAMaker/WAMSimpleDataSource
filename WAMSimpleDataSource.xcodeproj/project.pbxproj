@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA6AE4141E04C3C100439971 /* WAMCellInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6AE4121E04C3C100439971 /* WAMCellInfo.h */; };
+		CA6AE4151E04C3C100439971 /* WAMCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4131E04C3C100439971 /* WAMCellInfo.m */; };
+		CA6AE4171E04CD1A00439971 /* WAMCellInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4161E04CD1A00439971 /* WAMCellInfoTests.m */; };
 		CA8A63BF1E04C195007E99FA /* WAMSimpleDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A63B51E04C195007E99FA /* WAMSimpleDataSource.framework */; };
 		CA8A63C41E04C195007E99FA /* WAMSimpleDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA8A63C31E04C195007E99FA /* WAMSimpleDataSourceTests.m */; };
 		CA8A63C61E04C195007E99FA /* WAMSimpleDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA6AE4121E04C3C100439971 /* WAMCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAMCellInfo.h; sourceTree = "<group>"; };
+		CA6AE4131E04C3C100439971 /* WAMCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMCellInfo.m; sourceTree = "<group>"; };
+		CA6AE4161E04CD1A00439971 /* WAMCellInfoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMCellInfoTests.m; sourceTree = "<group>"; };
+		CA6AE4181E04CDBC00439971 /* WAMTestsConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAMTestsConstant.h; sourceTree = "<group>"; };
 		CA8A63B51E04C195007E99FA /* WAMSimpleDataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WAMSimpleDataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WAMSimpleDataSource.h; sourceTree = "<group>"; };
 		CA8A63B91E04C195007E99FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,8 +78,10 @@
 		CA8A63B71E04C195007E99FA /* WAMSimpleDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */,
 				CA8A63B91E04C195007E99FA /* Info.plist */,
+				CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */,
+				CA6AE4121E04C3C100439971 /* WAMCellInfo.h */,
+				CA6AE4131E04C3C100439971 /* WAMCellInfo.m */,
 			);
 			path = WAMSimpleDataSource;
 			sourceTree = "<group>";
@@ -80,8 +89,10 @@
 		CA8A63C21E04C195007E99FA /* WAMSimpleDataSourceTests */ = {
 			isa = PBXGroup;
 			children = (
-				CA8A63C31E04C195007E99FA /* WAMSimpleDataSourceTests.m */,
 				CA8A63C51E04C195007E99FA /* Info.plist */,
+				CA8A63C31E04C195007E99FA /* WAMSimpleDataSourceTests.m */,
+				CA6AE4181E04CDBC00439971 /* WAMTestsConstant.h */,
+				CA6AE4161E04CD1A00439971 /* WAMCellInfoTests.m */,
 			);
 			path = WAMSimpleDataSourceTests;
 			sourceTree = "<group>";
@@ -93,6 +104,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6AE4141E04C3C100439971 /* WAMCellInfo.h in Headers */,
 				CA8A63C61E04C195007E99FA /* WAMSimpleDataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6AE4151E04C3C100439971 /* WAMCellInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8A63C41E04C195007E99FA /* WAMSimpleDataSourceTests.m in Sources */,
+				CA6AE4171E04CD1A00439971 /* WAMCellInfoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -305,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,6 +340,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WAMSimpleDataSource/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.wamaker.WAMSimpleDataSource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -344,6 +359,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WAMSimpleDataSource/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.wamaker.WAMSimpleDataSource;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -392,6 +408,7 @@
 				CA8A63CB1E04C195007E99FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA8A63CC1E04C195007E99FA /* Build configuration list for PBXNativeTarget "WAMSimpleDataSourceTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +417,7 @@
 				CA8A63CE1E04C195007E99FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
