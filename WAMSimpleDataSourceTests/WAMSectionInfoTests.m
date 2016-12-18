@@ -118,4 +118,35 @@
     XCTAssertFalse([self.sectionInfo removeCellInfoWithAlias:kNotFoundAlias]);
 }
 
+- (void)testReplace {
+    WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.cell alias:nil];
+    
+    XCTAssertFalse([self.sectionInfo replaceCellInfo:self.identifierCellInfo with:[WAMCellInfo new]]);
+    XCTAssertTrue([self.sectionInfo replaceCellInfo:self.identifierCellInfo with:cellInfo]);
+    XCTAssertEqual(self.sectionInfo.cellInfos.count, 2);
+    XCTAssertEqual(self.sectionInfo.cellInfos.firstObject, cellInfo);
+}
+
+- (void)testReplaceAtIndex {
+    WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.cell alias:nil];
+    
+    XCTAssertFalse([self.sectionInfo replaceCellInfoAtIndex:233 with:cellInfo]);
+    
+    XCTAssertTrue([self.sectionInfo replaceCellInfoAtIndex:1 with:cellInfo]);
+    XCTAssertEqual(self.sectionInfo.cellInfos.count, 2);
+    XCTAssertEqual([self.sectionInfo.cellInfos objectAtIndex:1], cellInfo);
+}
+
+- (void)testReplaceWithAlias {
+    WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.cell alias:nil];
+    
+    XCTAssertFalse([self.sectionInfo replaceCellInfoWithAlias:kNotFoundAlias with:cellInfo]);
+    
+    NSUInteger index = [self.sectionInfo indexOfCellInfoWithAlias:kCellAlias];
+    XCTAssertNotEqual(index, NSNotFound);
+    XCTAssertTrue([self.sectionInfo replaceCellInfoWithAlias:kCellAlias with:cellInfo]);
+    XCTAssertEqual(self.sectionInfo.cellInfos.count, 2);
+    XCTAssertEqual([self.sectionInfo.cellInfos objectAtIndex:index], cellInfo);
+}
+
 @end

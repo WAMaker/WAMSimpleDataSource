@@ -98,6 +98,37 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
     return success;
 }
 
+#pragma mark -- Replace
+
+- (BOOL)replaceCellInfo:(WAMCellInfo *)originalCellInfo with:(WAMCellInfo *)cellInfo {
+    NSAssert(originalCellInfo, @"originalCellInfo should not be nil");
+    NSAssert(cellInfo, @"cellInfo should not be nil");
+    
+    if (![self.mCellInfos containsObject:originalCellInfo] ||
+        !(originalCellInfo.valid && cellInfo.valid)) {
+        return NO;
+    }
+    NSUInteger index = [self.mCellInfos indexOfObject:originalCellInfo];
+    [self.mCellInfos replaceObjectAtIndex:index withObject:cellInfo];
+    return YES;
+}
+
+- (BOOL)replaceCellInfoAtIndex:(NSUInteger)index with:(WAMCellInfo *)cellInfo {
+    if (index >= self.mCellInfos.count) {
+        return NO;
+    }
+    return [self replaceCellInfo:[self.mCellInfos objectAtIndex:index] with:cellInfo];
+}
+
+- (BOOL)replaceCellInfoWithAlias:(NSString *)alias with:(WAMCellInfo *)cellInfo {
+    NSAssert(alias, @"alias should not be nil");
+    NSUInteger index = [self indexOfCellInfoWithAlias:alias];
+    if (index == NSNotFound) {
+        return NO;
+    }
+    return [self replaceCellInfo:[self.mCellInfos objectAtIndex:index] with:cellInfo];
+}
+
 #pragma mark - life cycle
 
 - (instancetype)init {

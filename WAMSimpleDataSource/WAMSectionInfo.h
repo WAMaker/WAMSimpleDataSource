@@ -61,6 +61,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)removeCellInfoAtIndex:(NSUInteger)index;
 - (BOOL)removeCellInfoWithAlias:(NSString *)alias;
 
+///--------------
+/// @name Replace
+///--------------
+
+- (BOOL)replaceCellInfo:(WAMCellInfo *)originalCellInfo with:(WAMCellInfo *)cellInfo;
+- (BOOL)replaceCellInfoAtIndex:(NSUInteger)index with:(WAMCellInfo *)cellInfo;
+- (BOOL)replaceCellInfoWithAlias:(NSString *)alias with:(WAMCellInfo *)cellInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END
