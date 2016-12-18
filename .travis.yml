@@ -2,5 +2,4 @@ language: objective-c
 
 script:
   - xcodebuild clean -project WAMSimpleDataSource.xcodeproj
-  - xcodebuild build -project WAMSimpleDataSource.xcodeproj
   - xcodebuild test  -project WAMSimpleDataSource.xcodeproj -scheme WAMSimpleDataSource -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4'
