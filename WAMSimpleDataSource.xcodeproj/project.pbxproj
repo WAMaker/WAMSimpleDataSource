@@ -17,6 +17,8 @@
 		CA6AE4241E04E9DB00439971 /* WAMSectionInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4231E04E9DB00439971 /* WAMSectionInfoTests.m */; };
 		CA8A63BF1E04C195007E99FA /* WAMSimpleDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A63B51E04C195007E99FA /* WAMSimpleDataSource.framework */; };
 		CA8A63C61E04C195007E99FA /* WAMSimpleDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAE38C841E06E87D00C85BEA /* WAMDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE38C821E06E87D00C85BEA /* WAMDataSource.h */; };
+		CAE38C851E06E87D00C85BEA /* WAMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE38C831E06E87D00C85BEA /* WAMDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CA8A63B91E04C195007E99FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8A63BE1E04C195007E99FA /* WAMSimpleDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WAMSimpleDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8A63C51E04C195007E99FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAE38C821E06E87D00C85BEA /* WAMDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAMDataSource.h; sourceTree = "<group>"; };
+		CAE38C831E06E87D00C85BEA /* WAMDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 			children = (
 				CA8A63B91E04C195007E99FA /* Info.plist */,
 				CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */,
+				CAE38C821E06E87D00C85BEA /* WAMDataSource.h */,
+				CAE38C831E06E87D00C85BEA /* WAMDataSource.m */,
 				CA6AE4191E04D14100439971 /* WAMSectionInfo.h */,
 				CA6AE41A1E04D14100439971 /* WAMSectionInfo.m */,
 				CA6AE4121E04C3C100439971 /* WAMCellInfo.h */,
@@ -120,6 +126,7 @@
 				CA6AE41B1E04D14100439971 /* WAMSectionInfo.h in Headers */,
 				CA6AE4211E04D87B00439971 /* WAMCellInfo+Private.h in Headers */,
 				CA8A63C61E04C195007E99FA /* WAMSimpleDataSource.h in Headers */,
+				CAE38C841E06E87D00C85BEA /* WAMDataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +231,7 @@
 			files = (
 				CA6AE4151E04C3C100439971 /* WAMCellInfo.m in Sources */,
 				CA6AE41C1E04D14100439971 /* WAMSectionInfo.m in Sources */,
+				CAE38C851E06E87D00C85BEA /* WAMDataSource.m in Sources */,
 				CA6AE4221E04D87B00439971 /* WAMCellInfo+Private.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

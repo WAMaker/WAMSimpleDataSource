@@ -25,7 +25,7 @@
 }
 
 - (instancetype)initWithReuseIdentifier:(NSString *)identifier title:(NSString *)title detail:(NSString *)detail alias:(NSString *)alias {
-    NSAssert(identifier, @"identifier should not be nil");
+    NSAssert([identifier isKindOfClass:[NSString class]], @"identifier should be valid");
     
     if (self = [super init]) {
         self.reuseIdentifier = identifier;
@@ -41,7 +41,7 @@
 }
 
 - (instancetype)initWithSelfDefineCell:(__kindof UITableViewCell *)cell alias:(NSString *)alias {
-    NSAssert(cell, @"cell should not be nil");
+    NSAssert([cell isKindOfClass:[UITableViewCell class]], @"cell should be valid");
     
     if (self = [super init]) {
         self.cell  = cell;

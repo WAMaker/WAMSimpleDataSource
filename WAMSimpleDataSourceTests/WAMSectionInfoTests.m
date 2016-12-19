@@ -86,11 +86,11 @@
 - (void)testInsert {
     WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.cell alias:nil];
     
-    XCTAssertFalse([self.sectionInfo appendingCellInfo:cellInfo atIndex:233]);
+    XCTAssertFalse([self.sectionInfo appendingCellInfo:cellInfo atIndex:kUnvalidIndex]);
     
-    XCTAssertTrue([self.sectionInfo appendingCellInfo:cellInfo atIndex:0]);
+    XCTAssertTrue([self.sectionInfo appendingCellInfo:cellInfo atIndex:2]);
     XCTAssertEqual(self.sectionInfo.cellInfos.count, 3);
-    XCTAssertEqual(self.sectionInfo.cellInfos.firstObject, cellInfo);
+    XCTAssertEqual([self.sectionInfo.cellInfos objectAtIndex:2], cellInfo);
 }
 
 - (void)testRemove {
@@ -103,7 +103,7 @@
 }
 
 - (void)testRemoveAtIndex {
-    XCTAssertFalse([self.sectionInfo removeCellInfoAtIndex:2333]);
+    XCTAssertFalse([self.sectionInfo removeCellInfoAtIndex:kUnvalidIndex]);
     
     XCTAssertTrue([self.sectionInfo removeCellInfoAtIndex:0]);
     XCTAssertEqual(self.sectionInfo.cellInfos.count, 1);
@@ -130,7 +130,7 @@
 - (void)testReplaceAtIndex {
     WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.cell alias:nil];
     
-    XCTAssertFalse([self.sectionInfo replaceCellInfoAtIndex:233 with:cellInfo]);
+    XCTAssertFalse([self.sectionInfo replaceCellInfoAtIndex:kUnvalidIndex with:cellInfo]);
     
     XCTAssertTrue([self.sectionInfo replaceCellInfoAtIndex:1 with:cellInfo]);
     XCTAssertEqual(self.sectionInfo.cellInfos.count, 2);

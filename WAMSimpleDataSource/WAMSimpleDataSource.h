@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char WAMSimpleDataSourceVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WAMSimpleDataSource/PublicHeader.h>
 
-
+#import <WAMSimpleDataSource/WAMDataSource.h>

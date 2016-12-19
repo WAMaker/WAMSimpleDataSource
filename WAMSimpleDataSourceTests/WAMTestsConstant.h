@@ -18,4 +18,6 @@ static NSString *const kSectionAlias   = @"kSectionAlias";
 
 static NSString *const kNotFoundAlias  = @"Fork you!";
 
+static CGFloat   const kUnvalidIndex   = 2333;
+
 #endif /* WAMTestsConstant_h */
