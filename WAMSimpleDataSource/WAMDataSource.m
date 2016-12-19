@@ -33,7 +33,15 @@
     return self;
 }
 
-#pragma mark -- Index search
+#pragma mark - getter (public)
+
+- (NSArray<WAMSectionInfo *> *)sectionInfos {
+    return self.mSectionInfos.copy;
+}
+
+@end
+
+@implementation WAMDataSource (IndexSearch)
 
 - (NSUInteger)indexOfSectionInfoWithAlias:(NSString *)alias {
     NSAssert([alias isKindOfClass:[NSString class]], @"alias should be valid");
@@ -62,7 +70,9 @@
     return indexPath;
 }
 
-#pragma mark -- Append
+@end
+
+@implementation WAMDataSource (Append)
 
 - (BOOL)appendingSectionInfo:(WAMSectionInfo *)sectionInfo {
     NSAssert([sectionInfo isKindOfClass:[WAMSectionInfo class]], @"sectionInfo should be valid");
@@ -79,7 +89,9 @@
     return YES;
 }
 
-#pragma mark -- Delete
+@end
+
+@implementation WAMDataSource (Delete)
 
 - (BOOL)removeSectionInfo:(WAMSectionInfo *)sectionInfo {
     NSAssert([sectionInfo isKindOfClass:[WAMSectionInfo class]], @"sectionInfo should be valid");
@@ -113,7 +125,9 @@
     return index != NSNotFound;
 }
 
-#pragma mark -- Replace
+@end
+
+@implementation WAMDataSource (Replace)
 
 - (BOOL)replaceSectionInfo:(WAMSectionInfo *)originalSectionInfo with:(WAMSectionInfo *)sectionInfo {
     NSAssert([originalSectionInfo isKindOfClass:[WAMSectionInfo class]], @"originalSectionInfo should be valid");
@@ -146,12 +160,6 @@
         }
     }];
     return [self replaceSectionInfoAtIndex:index with:sectionInfo];
-}
-
-#pragma mark - getter (public)
-
-- (NSArray<WAMSectionInfo *> *)sectionInfos {
-    return self.mSectionInfos.copy;
 }
 
 @end

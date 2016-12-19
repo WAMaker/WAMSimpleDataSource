@@ -22,31 +22,31 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)dataSourceWithSectionInfos:(NSArray<WAMSectionInfo *> *)sectionInfos;
 - (instancetype)initWithSectionInfos:(NSArray<WAMSectionInfo *> *)sectionInfos;
 
-///-------------------
-/// @name Index search
-///-------------------
+@end
+
+@interface WAMDataSource (IndexSearch)
 
 - (NSUInteger)indexOfSectionInfoWithAlias:(NSString *)alias;
 - (nullable NSIndexPath *)indexPathOfCellInfoWithAlias:(NSString *)alias;
 
-///-------------
-/// @name Append
-///-------------
+@end
+
+@interface WAMDataSource (Append)
 
 - (BOOL)appendingSectionInfo:(WAMSectionInfo *)sectionInfo;
 - (BOOL)appendingSectionInfo:(WAMSectionInfo *)sectionInfo atIndex:(NSUInteger)index;
 
-///-------------
-/// @name Delete
-///-------------
+@end
+
+@interface WAMDataSource (Delete)
 
 - (BOOL)removeSectionInfo:(WAMSectionInfo *)sectionInfo;
 - (BOOL)removeSectionInfoAtIndex:(NSUInteger)index;
 - (BOOL)removeSectionInfoWithAlias:(NSString *)alias;
 
-///--------------
-/// @name Replace
-///--------------
+@end
+
+@interface WAMDataSource (Replace)
 
 - (BOOL)replaceSectionInfo:(WAMSectionInfo *)originalSectionInfo with:(WAMSectionInfo *)sectionInfo;
 - (BOOL)replaceSectionInfoAtIndex:(NSUInteger)index with:(WAMSectionInfo *)sectionInfo;

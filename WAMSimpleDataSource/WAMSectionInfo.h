@@ -40,30 +40,30 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithCellInfos:(NSArray<WAMCellInfo *> *)cellInfos
                             alias:(nullable NSString *)alias;
 
-///-------------
-/// @name Search
-///-------------
+@end
+
+@interface WAMSectionInfo (IndexSearch)
 
 - (NSUInteger)indexOfCellInfoWithAlias:(NSString *)alias;
 
-///-------------
-/// @name Append
-///-------------
+@end
+
+@interface WAMSectionInfo (Append)
 
 - (BOOL)appendingCellInfo:(WAMCellInfo *)cellInfo;
 - (BOOL)appendingCellInfo:(WAMCellInfo *)cellInfo atIndex:(NSUInteger)index;
 
-///-------------
-/// @name Delete
-///-------------
+@end
+
+@interface WAMSectionInfo (Delete)
 
 - (BOOL)removeCellInfo:(WAMCellInfo *)cellInfo;
 - (BOOL)removeCellInfoAtIndex:(NSUInteger)index;
 - (BOOL)removeCellInfoWithAlias:(NSString *)alias;
 
-///--------------
-/// @name Replace
-///--------------
+@end
+
+@interface WAMSectionInfo (Replace)
 
 - (BOOL)replaceCellInfo:(WAMCellInfo *)originalCellInfo with:(WAMCellInfo *)cellInfo;
 - (BOOL)replaceCellInfoAtIndex:(NSUInteger)index with:(WAMCellInfo *)cellInfo;
