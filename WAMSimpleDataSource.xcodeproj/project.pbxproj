@@ -17,6 +17,7 @@
 		CA6AE4241E04E9DB00439971 /* WAMSectionInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6AE4231E04E9DB00439971 /* WAMSectionInfoTests.m */; };
 		CA8A63BF1E04C195007E99FA /* WAMSimpleDataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8A63B51E04C195007E99FA /* WAMSimpleDataSource.framework */; };
 		CA8A63C61E04C195007E99FA /* WAMSimpleDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CA8A63B81E04C195007E99FA /* WAMSimpleDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA9C40161E07C776009B3419 /* WAMDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9C40151E07C776009B3419 /* WAMDataSourceTests.m */; };
 		CAE38C841E06E87D00C85BEA /* WAMDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE38C821E06E87D00C85BEA /* WAMDataSource.h */; };
 		CAE38C851E06E87D00C85BEA /* WAMDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE38C831E06E87D00C85BEA /* WAMDataSource.m */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		CA8A63B91E04C195007E99FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8A63BE1E04C195007E99FA /* WAMSimpleDataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WAMSimpleDataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8A63C51E04C195007E99FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9C40151E07C776009B3419 /* WAMDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMDataSourceTests.m; sourceTree = "<group>"; };
 		CAE38C821E06E87D00C85BEA /* WAMDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAMDataSource.h; sourceTree = "<group>"; };
 		CAE38C831E06E87D00C85BEA /* WAMDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAMDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 			children = (
 				CA8A63C51E04C195007E99FA /* Info.plist */,
 				CA6AE4181E04CDBC00439971 /* WAMTestsConstant.h */,
+				CA9C40151E07C776009B3419 /* WAMDataSourceTests.m */,
 				CA6AE4231E04E9DB00439971 /* WAMSectionInfoTests.m */,
 				CA6AE4161E04CD1A00439971 /* WAMCellInfoTests.m */,
 			);
@@ -242,6 +245,7 @@
 			files = (
 				CA6AE4171E04CD1A00439971 /* WAMCellInfoTests.m in Sources */,
 				CA6AE4241E04E9DB00439971 /* WAMSectionInfoTests.m in Sources */,
+				CA9C40161E07C776009B3419 /* WAMDataSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

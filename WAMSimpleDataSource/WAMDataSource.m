@@ -106,10 +106,11 @@
     [self.mSectionInfos enumerateObjectsUsingBlock:^(WAMSectionInfo *obj, NSUInteger idx, BOOL *stop) {
         if ([obj.alias isEqualToString:alias]) {
             index = idx;
+            [self.mSectionInfos removeObject:obj];
             *stop = YES;
         }
     }];
-    return index == NSNotFound;
+    return index != NSNotFound;
 }
 
 #pragma mark -- Replace
@@ -151,15 +152,6 @@
 
 - (NSArray<WAMSectionInfo *> *)sectionInfos {
     return self.mSectionInfos.copy;
-}
-
-#pragma mark - getter (private)
-
-- (NSMutableArray<WAMSectionInfo *> *)mSectionInfos {
-    if (_mSectionInfos == nil) {
-        _mSectionInfos = @[].mutableCopy;
-    }
-    return _mSectionInfos;
 }
 
 @end
