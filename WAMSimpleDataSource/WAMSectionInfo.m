@@ -110,8 +110,7 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
     NSAssert(originalCellInfo.valid, @"originalCellInfo should be valid");
     NSAssert(cellInfo.valid, @"cellInfo should be valid");
     
-    if (![self.mCellInfos containsObject:originalCellInfo] ||
-        !(originalCellInfo.valid && cellInfo.valid)) {
+    if (![self.mCellInfos containsObject:originalCellInfo]) {
         return NO;
     }
     NSUInteger index = [self.mCellInfos indexOfObject:originalCellInfo];

@@ -121,7 +121,8 @@
 - (void)testReplace {
     WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.cell alias:nil];
     
-    XCTAssertFalse([self.sectionInfo replaceCellInfo:self.identifierCellInfo with:[WAMCellInfo new]]);
+    XCTAssertFalse([self.sectionInfo replaceCellInfo:cellInfo with:cellInfo]);
+    
     XCTAssertTrue([self.sectionInfo replaceCellInfo:self.identifierCellInfo with:cellInfo]);
     XCTAssertEqual(self.sectionInfo.cellInfos.count, 2);
     XCTAssertEqual(self.sectionInfo.cellInfos.firstObject, cellInfo);
