@@ -6,7 +6,7 @@ An easier way to create static table view data source.
 
 To integrate WAMSimpleDataSource into your Xcode project using CocoaPods, specify it in your Podfile:
 
-```
+```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
@@ -17,7 +17,7 @@ end
 
 Then, run the following command:
 
-```
+```bash
 $ pod install
 ```
 
@@ -27,15 +27,15 @@ In order to make codes clear and reduce hard codes, **WAMCellInfo** and **WAMSec
 
 #### WAMCellInfo
 
-WAMCellInfo is a class holding the basic infomation for your cell. You can create a cell info with reuseIdentifier like this:
+`WAMCellInfo` is a class holding the basic infomation for your cell. You can create a cell info with reuseIdentifier like this:
 
-```
+```objective-c
 WAMCellInfo *cellInfo = [WAMCellInfo infoWithReuseIdentifier:@"identifier" title:nil detail:nil alias:@"infoWithReuseIdentifier"];
 ```
 
 or with you customized cell:
 
-```
+```objective-c
 WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.customizedCell alias:@"infoWithSelfDefineCell"];
 ```
 
@@ -43,21 +43,21 @@ WAMCellInfo *cellInfo = [WAMCellInfo infoWithSelfDefineCell:self.customizedCell 
 
 WAMSectionInfo holds all cellInfos in the same section. You can simply add cellInfos to the sectionInfo:
 
-```
+```objective-c
 WAMSectionInfo *sectionInfo = [WAMSectionInfo infoWithCellInfos:@[cellInfoZero, cellInfoOne] alias:@"sectionAlias"];
 ```
 
 ##### Index search
 
-Searching index for a cellInfo with specific alias is easy (if index is not found in the sectionInfo, function will return **NSNotFound**):
+Searching index for a cellInfo with specific alias is easy (if index is not found in the sectionInfo, function will return NSNotFound):
 
-```
+```objective-c
 NSUInteger index = [sectionInfo indexOfCellInfoWithAlias:@"forkYou"];
 ```
 
 ##### Append
 
-```
+```objective-c
 [sectionInfo appendingCellInfo:cellInfo];
 
 if ([sectionInfo appendingCellInfo:cellInfo atIndex:2333]) {
@@ -69,7 +69,7 @@ if ([sectionInfo appendingCellInfo:cellInfo atIndex:2333]) {
 
 ##### Delete
 
-```
+```objective-c
 [sectionInfo removeCellInfo:cellInfo];
 [sectionInfo removeCellInfoAtIndex:0];
 [sectionInfo removeCellInfoWithAlias:@"forkYou"];
@@ -77,7 +77,7 @@ if ([sectionInfo appendingCellInfo:cellInfo atIndex:2333]) {
 
 ##### Replace
 
-```
+```objective-c
 [sectionInfo replaceCellInfo:originalCellInfo with:cellInfo];
 [sectionInfo replaceCellInfoAtIndex:0 with:cellInfo];
 [sectionInfo replaceCellInfoWithAlias:@"forkYou" with:cellInfo];
@@ -85,9 +85,9 @@ if ([sectionInfo appendingCellInfo:cellInfo atIndex:2333]) {
 
 #### WAMDataSource
 
-See a simple demo below on how to use WAMDataSource in your codes (For more detailed information please look into WAMCellInfo, WAMSectionInfo and WAMDataSource head files):
+See a simple demo below on how to use `WAMDataSource` in your codes (For more detailed information please look into `WAMCellInfo`, `WAMSectionInfo` and `WAMDataSource` header files):
 
-```
+```objective-c
 #pragma mark - Initialization
 
 static NSString *const kReuseIdentifier     = @"tableViewCellIdentifier";
