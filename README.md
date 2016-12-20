@@ -1,5 +1,8 @@
 # WAMSimpleDataSource
 
+[![codecov.io](https://codecov.io/gh/WAMaker/WAMSimpleDataSource/branch/develop/graphs/badge.svg)](https://codecov.io/gh/WAMaker/WAMSimpleDataSource)
+
+
 An easier way to create static table view data source.
 
 ## Installation with CocoaPods
