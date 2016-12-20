@@ -23,7 +23,7 @@ $ pod install
 
 ## Usage
 
-In order to make codes clear and reduce hard codes, **WAMCellInfo** and **WAMSectionInfo** are both able to set alias (nullable according to your dependence) for index searching, appending, replacing and removing.
+In order to make codes clear and reduce hard codes, **WAMCellInfo** and **WAMSectionInfo** are both able to set alias (nullable according to your decision) for index searching, appending, replacing and removing.
 
 #### WAMCellInfo
 
@@ -90,11 +90,20 @@ See a simple demo below on how to use WAMDataSource in your codes (For more deta
 ```
 #pragma mark - Initialization
 
-WAMCellInfo *selfDefineInfo = [WAMCellInfo infoWithSelfDefineCell:self.customizedCell alias:@"infoWithSelfDefineCell"];
-WAMSectionInfo *zero = [WAMSectionInfo infoWithCellInfos:@[selfDefineInfo] alias:@"zeroSectionAlias"];
+static NSString *const kReuseIdentifier     = @"tableViewCellIdentifier";
+static NSString *const kIdentifierCellAlias = @"kIdentifierCellAlias";
+static NSString *const kSelfDefineCellAlias = @"kSelfDefineCellAlias";
 
-WAMCellInfo *identifierCellInfo = [WAMCellInfo infoWithReuseIdentifier:@"identifier" title:nil detail:nil alias:@"infoWithReuseIdentifier"];
-WAMSectionInfo *one = [WAMSectionInfo infoWithCellInfos:@[identifierCellInfo] alias:@"oneSectionAlias"];
+static NSString *const kSectionZeroAlias = @"kSectionZeroAlias";
+static NSString *const kSectionOneAlias  = @"kSectionOneAlias";
+
+WAMSectionInfo *zero = [WAMSectionInfo infoWithCellInfos:@[
+        [WAMCellInfo infoWithSelfDefineCell:self.customizedCell alias:kSelfDefineCellAlias]
+    ] alias:kSectionZeroAlias];
+
+WAMSectionInfo *one = [WAMSectionInfo infoWithCellInfos:@[
+        [WAMCellInfo infoWithReuseIdentifier:kReuseIdentifier title:nil detail:nil alias:kIdentifierCellAlias]
+    ] alias:@"oneSectionAlias"];
 
 self.dataSource = [WAMDataSource dataSourceWithSectionInfos:@[zero, one]];
 
@@ -112,9 +121,9 @@ self.dataSource = [WAMDataSource dataSourceWithSectionInfos:@[zero, one]];
     WAMCellInfo *cellInfo = self.dataSource.sectionInfos[indexPath.section].cellInfos[indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellInfo.identifier forIndexPath:indexPath];
 
-    if ([cellInfo.alias isEqualToString:@"infoWithSelfDefineCell"]) {
+    if ([cellInfo.alias isEqualToString:kSelfDefineCellAlias]) {
         // do something
-    } else if ([[self.dataSource indexPathOfCellInfoWithAlias:@"infoWithReuseIdentifier"] isEqual:indexPath]) {
+    } else if ([[self.dataSource indexPathOfCellInfoWithAlias:kIdentifierCellAlias] isEqual:indexPath]) {
         // do something
     }
     .
