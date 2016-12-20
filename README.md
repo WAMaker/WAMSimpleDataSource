@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/WAMaker/WAMSimpleDataSource.svg?branch=master)](https://travis-ci.org/WAMaker/WAMSimpleDataSource)
 [![codecov](https://codecov.io/gh/WAMaker/WAMSimpleDataSource/branch/master/graph/badge.svg)](https://codecov.io/gh/WAMaker/WAMSimpleDataSource)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/WAMSimpleDataSource.svg)](https://img.shields.io/cocoapods/v/WAMSimpleDataSource.svg)
+[![license](https://cocoapod-badges.herokuapp.com/l/WAMSimpleDataSource/badge.svg)](https://raw.githubusercontent.com/WAMaker/WAMSimpleDataSource/master/LICENSE)
 
 
 An easier way to create static table view data source.
