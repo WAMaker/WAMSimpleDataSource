@@ -2,6 +2,7 @@ language: objective-c
 
 script:
   - xcodebuild clean -project WAMSimpleDataSource.xcodeproj
+  - xcodebuild build -project WAMSimpleDataSource.xcodeproj -scheme WAMSimpleDataSource -sdk iphoneos
   - xcodebuild test  -project WAMSimpleDataSource.xcodeproj -scheme WAMSimpleDataSource -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.4' GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 after_success:
   - bash <(curl -s https://codecov.io/bash)
