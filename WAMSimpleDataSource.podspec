@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WAMSimpleDataSource"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "An easier way to create readable static table view data source"
   s.homepage     = "https://github.com/WAMaker/WAMSimpleDataSource"
   s.author       = { "WAMaker" => "https://github.com/WAMaker" }
