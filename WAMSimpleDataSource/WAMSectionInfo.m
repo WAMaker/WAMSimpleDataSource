@@ -102,6 +102,9 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
 - (BOOL)appendingCellInfo:(WAMCellInfo *)cellInfo {
     NSAssert(cellInfo.valid, @"cellInfo should be valid");
     
+    if (!cellInfo.valid) {
+        return NO;
+    }
     [self.mCellInfos addObject:cellInfo];
     return YES;
 }
@@ -109,7 +112,8 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
 - (BOOL)appendingCellInfo:(WAMCellInfo *)cellInfo atIndex:(NSUInteger)index {
     NSAssert(cellInfo.valid, @"cellInfo should be valid");
     
-    if (index > self.mCellInfos.count) {
+    if (index > self.mCellInfos.count ||
+        !cellInfo.valid) {
         return NO;
     }
     [self.mCellInfos insertObject:cellInfo atIndex:index];
@@ -123,7 +127,8 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
 - (BOOL)removeCellInfo:(WAMCellInfo *)cellInfo {
     NSAssert(cellInfo.valid, @"cellInfo should be valid");
     
-    if (![self.mCellInfos containsObject:cellInfo]) {
+    if (!cellInfo.valid ||
+        ![self.mCellInfos containsObject:cellInfo]) {
         return NO;
     }
     [self.mCellInfos removeObject:cellInfo];
@@ -139,6 +144,10 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
 
 - (BOOL)removeCellInfoWithAlias:(NSString *)alias {
     NSAssert([alias isKindOfClass:[NSString class]], @"alias should be valid");
+    
+    if (!alias) {
+        return NO;
+    }
     
     __block BOOL success = NO;
     [self.mCellInfos enumerateObjectsUsingBlock:^(WAMCellInfo *cellInfo, NSUInteger idx, BOOL *stop) {
@@ -159,7 +168,8 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
     NSAssert(originalCellInfo.valid, @"originalCellInfo should be valid");
     NSAssert(cellInfo.valid, @"cellInfo should be valid");
     
-    if (![self.mCellInfos containsObject:originalCellInfo]) {
+    if (!originalCellInfo.valid || !cellInfo.valid ||
+        ![self.mCellInfos containsObject:originalCellInfo]) {
         return NO;
     }
     NSUInteger index = [self.mCellInfos indexOfObject:originalCellInfo];
@@ -168,7 +178,8 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
 }
 
 - (BOOL)replaceCellInfoAtIndex:(NSUInteger)index with:(WAMCellInfo *)cellInfo {
-    if (index >= self.mCellInfos.count) {
+    if (!cellInfo.valid ||
+        index >= self.mCellInfos.count) {
         return NO;
     }
     return [self replaceCellInfo:[self.mCellInfos objectAtIndex:index] with:cellInfo];
@@ -178,7 +189,8 @@ static CGFloat const kSectionHeaderFooterDefaultH = 0.1;
     NSAssert([alias isKindOfClass:[NSString class]], @"alias should be valid");
     
     NSUInteger index = [self indexOfCellInfoWithAlias:alias];
-    if (index == NSNotFound) {
+    if (!cellInfo.valid ||
+        index == NSNotFound) {
         return NO;
     }
     return [self replaceCellInfo:[self.mCellInfos objectAtIndex:index] with:cellInfo];
