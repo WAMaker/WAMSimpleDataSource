@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/WAMaker/WAMSimpleDataSource"
   s.author       = { "WAMaker" => "https://github.com/WAMaker" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.source       = { :git => "https://github.com/onevcat/Kingfisher.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/WAMaker/WAMSimpleDataSource.git", :tag => s.version.to_s }
 
   s.platform     = :ios, "8.0"
   s.requires_arc = true
